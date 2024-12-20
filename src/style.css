@@ -1,0 +1,37 @@
+/* styles.css */
+.green-yellow-theme {
+  background-color: #66bb6a;
+  color: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.green-yellow-theme .button {
+  background-color: #ffeb3b;
+  color: #212121;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+.green-yellow-theme .button:hover {
+  background-color: #fbc02d;
+}
+
+.green-yellow-theme .header {
+  color: #fbc02d;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.green-yellow-theme .separator {
+  background-color: #f5f5f5;
+  height: 2px;
+  border: none;
+  margin: 16px 0;
+}
