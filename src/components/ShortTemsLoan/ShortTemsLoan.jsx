@@ -6,12 +6,12 @@ const ShortTermsLoan = () => {
     <div className="flex flex-wrap w-full min-h-[550px] bg-[#e8f4f8]">
       {/* Left Part */}
       <div className="w-full md:w-1/2 flex items-center justify-center p-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-4">
           {/* Image 1 */}
           <img
             src="/assets/shortTerms/m1.png"
             alt="Short-term loan option 1"
-            className="w-full h-auto object-cover lg:relative lg:left-24 lg:z-20"
+            className="w-full h-auto object-cover lg:hidden"
           />
           {/* Image 2 */}
           <img
@@ -23,10 +23,11 @@ const ShortTermsLoan = () => {
           <img
             src="/assets/shortTerms/side.png"
             alt="Additional loan information"
-            className="hidden lg:block w-full lg:h-[450px] lg:relative lg:right-4 lg:z-0 lg:top-0"
+            className="hidden lg:block w-full lg:h-[650px] lg:relative lg:right-4 lg:z-0 lg:top-0"
           />
         </div>
       </div>
+
       {/* Right Part */}
       <div className="w-full md:w-1/2 flex items-center justify-center p-6">
         <div className="">

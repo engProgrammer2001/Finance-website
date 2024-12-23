@@ -57,7 +57,7 @@ const Rules = () => {
           backgroundPosition: "center",
         }}
       >
-        <h1 className="py-24 text-transparent bg-clip-text bg-gradient-to-r from-[#ffeb3b] to-zinc-800 font-extrabold text-4xl lg:text-5xl text-center bg-opacity-75">
+        <h1 className="py-24 text-slate-700 font-extrabold text-4xl lg:text-5xl text-center bg-opacity-75">
           6 Golden Rules For Taking A Loan
         </h1>
       </div>
@@ -71,7 +71,7 @@ const Rules = () => {
                 key={rule.id}
                 className={`flex justify-between items-center cursor-pointer p-2 py-3 lg:py-5 rounded-md border-2 border-slate-400 font-bold text-lg ${
                   selectedRule?.id === rule.id
-                    ? "bg-[#fbc02d]"
+                    ? "bg-[#e8f4f8]"
                     : "hover:bg-[#f5f5f5]"
                 }`}
                 onClick={() => setSelectedRule(rule)}
@@ -98,7 +98,7 @@ const Rules = () => {
         <div className="flex-1 relative top-[-50px] lg:top-12 lg:right-8 h-[300px] bg-[#f5f5f5] p-8 rounded-md shadow-md">
           {selectedRule ? (
             <div>
-              <h3 className="text-2xl font-semibold mb-2 text-[#fbc02d]">
+              <h3 className="text-2xl font-semibold mb-2 text-slate-700">
                 {selectedRule.title} {selectedRule.number}
               </h3>
               <p className="text-slate-800 text-sm font-bold">

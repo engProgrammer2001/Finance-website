@@ -7,7 +7,6 @@ import LoanApprovalProcess from "../components/LoanAprovel/LoanApprovalProcess";
 import Rules from "../components/Rules/Rules";
 import WhyChooseUs from "../components/WhyChooseUs/WhyChooseUs";
 import Testimonial from "../components/Testimonials/Testimonials";
-import ContactForm from "../components/ContactForm/ContactForm";
 
 const Home = () => {
   return (
@@ -19,7 +18,7 @@ const Home = () => {
       <LoanApprovalProcess />
       <Rules />
       <WhyChooseUs />
-      <div className="py-8">
+      <div className="py-8 my-4">
         <h1 className="text-5xl text-center text-slate-800 font-semibold">
           What Our Customers Say
         </h1>
@@ -30,7 +29,7 @@ const Home = () => {
           efficient services.
         </p>
       </div>
-      <div className="flex flex-col lg:flex-row">
+      <div className="flex flex-col lg:flex-row my-8">
         {/* Left Section: Image */}
         <div className="w-full md:w-1/2 p-4 relative flex items-end justify-center">
           {/* Circle Background */}
@@ -48,30 +47,6 @@ const Home = () => {
         {/* Right Section: Slider */}
         <div className="lg:w-1/2 w-full">
           <Testimonial />
-        </div>
-      </div>
-      <div className="bg-[#e8f4f8] mt-6">
-        <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffeb3b] to-zinc-800 text-4xl lg:text-5xl text-center font-extrabold pt-16">
-          Reach out to me{" "}
-        </h1>
-        <div className="flex flex-col lg:flex-row">
-          {/* Left Section: Image */}
-          <div className="w-full md:w-1/2 p-4 relative flex items-end justify-center">
-            <iframe
-              title="location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d409377.0553719105!2d-74.30932477148002!3d40.69701929469058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e1!3m2!1sen!2sin!4v1733999701658!5m2!1sen!2sin"
-              width="660"
-              height="560"
-              className="bg-white p-4 rounded-lg "
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-          {/* Right Section: Slider */}
-          <div className="lg:w-1/2 w-full mr-4 mb-4 ">
-            <ContactForm />
-          </div>
         </div>
       </div>
     </div>
