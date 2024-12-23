@@ -11,7 +11,6 @@ import LoanDetails from "../components/LoanData/LoanDetails";
 import FaqPage from "../pages/FaqPage";
 import CreaditeCard from "../pages/CreaditeCard";
 import CrediteCardDetails from "../components/CrediteCardDetails/CrediteCardDetails";
-import CreaditeCardData from "../data/CreaditeCardData";
 import Insurance from "../pages/Insurance";
 import InsuranceDetails from "../components/InsuranceDetails/InsuranceDetails";
 import insuranceData from "../data/InsuranceData";
@@ -21,6 +20,7 @@ import { Register } from "../components/Register/Register";
 import Profile from "../pages/Profile";
 import PrivacyAndPolicy from "../components/PrivacyAndPolicy/PrivacyAndPolicy";
 import TermsAndCondition from "../components/TermsAndCondition/TermsAndCondition";
+import CreditCardData from "../data/creditCardData";
 
 const CustomerRouters = () => {
   return (
@@ -43,7 +43,7 @@ const CustomerRouters = () => {
         <Route path="/sb-finance/credit-card" element={<CreaditeCard />} />
         <Route
           path="/credite-card-details/:id"
-          element={<CrediteCardDetails CreaditeCardData={CreaditeCardData} />}
+          element={<CrediteCardDetails CreditCardData={CreditCardData} />}
         />
         <Route path="/sb-finance/insurance" element={<Insurance />} />
         <Route

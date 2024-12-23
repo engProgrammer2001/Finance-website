@@ -5,28 +5,26 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { logout } from "../../../state/authSlice";
 
 const AdminNavbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-    const [isOpen, setIsOpen] = useState(false);
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
 
-
-    const toggleNavbar = () => {
-        setIsOpen(!isOpen);
-      };
-    
-      const handleLogout = () => {
-        localStorage.removeItem("authToken");
-        localStorage.removeItem("authUser");
-        dispatch(logout()); 
-        navigate("/login");
-      }
+  const handleLogout = () => {
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("authUser");
+    dispatch(logout());
+    navigate("/login");
+  };
   return (
     <>
-      <div className="bg-gray-800 text-white rounded-lg lg:h-screen ">
+      <div className="bg-gray-800 text-white rounded-lg lg:h-full ">
         {/* Mobile Toggle Button */}
         <button
-          className="lg:hidden p-4 text-red-500 focus:outline-none"
+          className="lg:hidden p-4 text-white focus:outline-none"
           onClick={toggleNavbar}
         >
           {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -45,7 +43,7 @@ const AdminNavbar = () => {
             <li className="flex justify-between items-center">
               <Link
                 to="/admin/admin/dashboard"
-                className="hover:bg-red-200 hover:text-red-500 p-2 rounded-lg block"
+                className="hover:bg-orange-300 hover:text-white p-2 rounded-lg block"
               >
                 Dashboard
               </Link>
@@ -53,15 +51,23 @@ const AdminNavbar = () => {
             <li className="flex justify-between items-center">
               <Link
                 to="/admin/admin/total-user-admin"
-                className="hover:bg-red-200 hover:text-red-500 p-2 rounded-lg block"
+                className="hover:bg-orange-300 hover:text-white p-2 rounded-lg block"
               >
                 Total User
               </Link>
             </li>
             <li className="flex justify-between items-center">
               <Link
+                to="/admin/admin/loan-form-data"
+                className="hover:bg-orange-300 hover:text-white p-2 rounded-lg block"
+              >
+                Loan Form Data
+              </Link>
+            </li>
+            <li className="flex justify-between items-center">
+              <Link
                 to="/admin/admin/upload-logo-admin"
-                className="hover:bg-red-200 hover:text-red-500 p-2 rounded-lg block"
+                className="hover:bg-orange-300 hover:text-white p-2 rounded-lg block"
               >
                 Update Logo
               </Link>
@@ -69,12 +75,11 @@ const AdminNavbar = () => {
             <li className="flex justify-between items-center">
               <Link
                 to="/admin/admin/upload-footer-and-favicon-admin"
-                className="hover:bg-red-200 hover:text-red-500 p-2 rounded-lg block"
+                className="hover:bg-orange-300 hover:text-white p-2 rounded-lg block"
               >
-                Update footer Logo 
+                Update footer Logo
               </Link>
             </li>
-            
           </ul>
 
           <h2 className="text-lg font-semibold mt-6 mb-4">Account</h2>
@@ -82,7 +87,7 @@ const AdminNavbar = () => {
             <li className="flex justify-between items-center">
               <Link
                 to="/admin/admin/admin-profile"
-                className="hover:bg-red-200 hover:text-red-500 p-2 rounded-lg block"
+                className="hover:bg-orange-300 hover:text-white p-2 rounded-lg block"
               >
                 My Profile
               </Link>
@@ -90,7 +95,7 @@ const AdminNavbar = () => {
             <li className="flex justify-between items-center">
               <Link
                 onClick={handleLogout}
-                className="hover:bg-red-200 hover:text-red-500 p-2 rounded-lg block"
+                className="hover:bg-orange-300 hover:text-white p-2 rounded-lg block"
               >
                 Logout
               </Link>

@@ -8,6 +8,7 @@ import UploadLogo from "../components/Admin/components/UploadLogo";
 import UploadFooterAndFavicon from "../components/Admin/components/UploadFooterAndFavicon";
 import UploadFavicon from "../components/Admin/components/UploadFavicon";
 import AdminProfile from "../components/Admin/components/AdminProfile";
+import LoanData from "../components/Admin/components/LoanData";
 
 const AdminRoute = () => {
   return (
@@ -31,6 +32,7 @@ const AdminRoute = () => {
         />
         <Route path="upload-favicon-admin" element={<UploadFavicon />} />
         <Route path="admin-profile" element={<AdminProfile />} />
+        <Route path="loan-form-data" element={<LoanData />} />
       </Route>
     </Routes>
   );

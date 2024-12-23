@@ -62,7 +62,7 @@ const TotalUser = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-auto p-6 min-h-screen">
       <h1 className="text-3xl lg:text-5xl font-bold mb-6 text-center text-slate-800">
         Total Users
       </h1>

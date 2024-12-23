@@ -1,24 +1,28 @@
+import axios from "axios";
 import React, { useState } from "react";
-import emailjs from "emailjs-com";
+import { API_BASE_URL } from "../../config/config";
 
 const ApplyLoanForm = () => {
   const [formData, setFormData] = useState({
-    name: "",
+    fullName: "",
     email: "",
-    phoneNumber: "",
-    pancardNumber: "",
-    aadhaarNumber: "",
+    phone: "",
+    panNumber: "",
+    aadharNumber: "",
     loanAmount: "",
     monthlySalary: "",
-    dateOfBirth: "",
+    date: "",
     gender: "",
     state: "",
     city: "",
     pincode: "",
-    employmentType: "",
-    purpose: "",
+    employmentStatus: "",
+    loanPurpose: "",
     agree: false,
   });
+
+  const [message, setMessage] = useState(null); // State to store the message
+  const [messageType, setMessageType] = useState(""); // State to store the message type ('success' or 'error')
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -28,62 +32,75 @@ const ApplyLoanForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.agree) {
-      alert("You must agree to the terms and conditions.");
-      return;
-    }
 
-    // Prepare the form data to be sent
-    const emailTemplateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
-      phone_number: formData.phoneNumber,
-      pancard_number: formData.pancardNumber,
-      aadhaar_number: formData.aadhaarNumber,
-      loan_amount: formData.loanAmount,
-      monthly_salary: formData.monthlySalary,
-      date_of_birth: formData.dateOfBirth,
-      gender: formData.gender,
-      state: formData.state,
-      city: formData.city,
-      pincode: formData.pincode,
-      employment_type: formData.employmentType,
-      purpose: formData.purpose,
-    };
-
-    // Send the email using EmailJS
-    emailjs
-      .send(
-        "service_agyuyct",
-        "template_lw7chdg",
-        emailTemplateParams,
-        "NCfF_zstaIDryFmz_"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          alert("Application Submitted Successfully!");
-        },
-        (error) => {
-          console.error(error.text);
-          alert("There was an error submitting the form.");
+    try {
+      const response = await axios.post(
+        `${API_BASE_URL}loans/apply-loan`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
       );
+
+      if (response.status === 201) {
+        setMessage("Loan application submitted successfully!");
+        setMessageType("success");
+        setFormData({
+          fullName: "",
+          email: "",
+          phone: "",
+          panNumber: "",
+          aadharNumber: "",
+          loanAmount: "",
+          monthlySalary: "",
+          date: "",
+          gender: "",
+          state: "",
+          city: "",
+          pincode: "",
+          employmentStatus: "",
+          loanPurpose: "",
+          agree: false,
+        });
+      } else {
+        setMessage("Failed to submit loan application. Please try again.");
+        setMessageType("error");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setMessage("An error occurred while submitting the form. Please try again.");
+      setMessageType("error");
+    }
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-gray-100 shadow-md rounded-md">
-      <h2 className="text-xl font-bold mb-4">Loan Application Form</h2>
+    <div className="max-w-2xl mx-auto p-3 bg-gray-100 shadow-md rounded-md">
+      <h2 className="text-xl font-bold mb-4 text-center text-orange-400">
+        Loan Application Form
+      </h2>
+
+      {/* Display the message */}
+      {message && (
+        <div
+          className={`text-center p-2 mb-4 rounded ${
+            messageType === "success" ? "bg-green-200 text-green-800" : "bg-red-200 text-red-800"
+          }`}
+        >
+          {message}
+        </div>
+      )}
+
       <form onSubmit={handleSubmit}>
-        {/* Input Fields */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input
             type="text"
-            name="name"
+            name="fullName"
             placeholder="Name as PAN Card"
-            value={formData.name}
+            value={formData.fullName}
             onChange={handleChange}
             className="w-full p-4 border rounded"
             required
@@ -99,27 +116,27 @@ const ApplyLoanForm = () => {
           />
           <input
             type="text"
-            name="phoneNumber"
+            name="phone"
             placeholder="Phone Number"
-            value={formData.phoneNumber}
+            value={formData.phone}
             onChange={handleChange}
             className="w-full p-4 border rounded"
             required
           />
           <input
             type="text"
-            name="pancardNumber"
+            name="panNumber"
             placeholder="PAN Card Number"
-            value={formData.pancardNumber}
+            value={formData.panNumber}
             onChange={handleChange}
             className="w-full p-4 border rounded"
             required
           />
           <input
             type="text"
-            name="aadhaarNumber"
+            name="aadharNumber"
             placeholder="Aadhaar Number"
-            value={formData.aadhaarNumber}
+            value={formData.aadharNumber}
             onChange={handleChange}
             className="w-full p-4 border rounded"
             required
@@ -144,13 +161,12 @@ const ApplyLoanForm = () => {
           />
           <input
             type="date"
-            name="dateOfBirth"
-            value={formData.dateOfBirth}
+            name="date"
+            value={formData.date}
             onChange={handleChange}
             className="w-full p-4 border rounded"
             required
           />
-          {/* Select Fields */}
           <select
             name="gender"
             value={formData.gender}
@@ -191,8 +207,8 @@ const ApplyLoanForm = () => {
             required
           />
           <select
-            name="employmentType"
-            value={formData.employmentType}
+            name="employmentStatus"
+            value={formData.employmentStatus}
             onChange={handleChange}
             className="w-full p-4 border rounded"
             required
@@ -203,16 +219,14 @@ const ApplyLoanForm = () => {
           </select>
           <input
             type="text"
-            name="purpose"
-            placeholder="Enter Purpose"
-            value={formData.purpose}
+            name="loanPurpose"
+            placeholder="Enter Loan Purpose"
+            value={formData.loanPurpose}
             onChange={handleChange}
             className="w-full p-4 border rounded"
             required
           />
         </div>
-
-        {/* Terms and Conditions */}
         <div className="flex items-center mt-4">
           <input
             type="checkbox"
@@ -223,19 +237,9 @@ const ApplyLoanForm = () => {
             required
           />
           <label className="text-sm">
-            I agree to the everydayloanindia{" "}
-            <span className="text-blue-500">
-              <a href="/term-and-conditions">Terms and Conditions</a>
-            </span>{" "}
-            and{" "}
-            <span className="text-blue-500">
-              <a href="/privacy-and-policy">Privacy Policy</a>
-            </span>
-            .
+            I agree to the terms and conditions.
           </label>
         </div>
-
-        {/* Submit Button */}
         <button
           type="submit"
           className="w-full bg-yellow-400 text-slate-700 p-2 mt-6 rounded hover:bg-yellow-500 font-bold"

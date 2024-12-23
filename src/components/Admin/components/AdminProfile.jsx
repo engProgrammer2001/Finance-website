@@ -70,7 +70,7 @@ const AdminProfile = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row md:space-x-4">
+    <div className="flex flex-col md:flex-row md:space-x-4 min-h-screen">
       {/* Profile Details Form */}
       <div className="w-full md:w-1/2 bg-card p-4 rounded-lg shadow">
         <h2 className="text-lg font-semibold mb-4 text-center p-4 bg-yellow-400 text-slate-800 rounded-lg">

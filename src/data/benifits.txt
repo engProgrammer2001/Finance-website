@@ -1,0 +1,46 @@
+
+
+ {/* Apply for Credit Card Section */}
+      <div className="mt-12 bg-white p-8 rounded-lg shadow-lg">
+        <h3 className="text-2xl font-semibold text-yellow-500 mb-6">
+          How to Apply for this Credit Card
+        </h3>
+        <ul className="list-decimal list-inside space-y-2 text-gray-600">
+          <li>Visit the official website of the bank.</li>
+          <li>Fill in the application form with personal details.</li>
+          <li>
+            Submit the required documents (ID proof, address proof, etc.).
+          </li>
+          <li>Wait for approval notification from the bank.</li>
+        </ul>
+      </div>
+
+
+      {/* Requirements for Applying Section */}
+      <div className="mt-12 bg-white p-8 rounded-lg shadow-lg">
+        <h3 className="text-2xl font-semibold text-yellow-500 mb-6">
+          Requirements for Applying
+        </h3>
+        <ul className="list-decimal list-inside space-y-2 text-gray-600">
+          <li>Must be 21 years or older.</li>
+          <li>Stable income or employment.</li>
+          <li>Good credit score.</li>
+          <li>Valid ID proof (e.g., Passport, Aadhar, etc.).</li>
+          <li>
+            Proof of address (e.g., utility bill, rental agreement, etc.).
+          </li>
+        </ul>
+      </div>
+
+      
+      {/* Additional Details */}
+      <div className="mt-8 space-y-4">
+        <h3 className="text-xl font-semibold text-green-500">
+          Additional Information
+        </h3>
+        <ul className="list-none text-gray-600 space-y-2">
+          <li>Eligibility: {cardDetails.eligibility}</li>
+          <li>Reward Rate: {cardDetails.rewardRate}</li>
+          <li>Late Fee: {cardDetails.lateFee}</li>
+        </ul>
+      </div>

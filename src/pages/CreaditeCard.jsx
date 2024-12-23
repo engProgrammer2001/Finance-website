@@ -1,8 +1,8 @@
 import React from "react";
-import CreaditeCardData from "../data/CreaditeCardData";
 import { useNavigate } from "react-router-dom";
 import BenifitsOfCreaditeCard from "../components/BenifitsOfCreaditeCard/BenifitsOfCreaditeCard";
 import CrediteCardFaq from "../components/CreditCardFaq/CreditCardFaq";
+import CreditCardData from "../data/creditCardData";
 
 const CreaditeCard = () => {
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ const CreaditeCard = () => {
           Choose Your Credit Card
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {CreaditeCardData.map((card) => (
+          {CreditCardData.map((card) => (
             <div
               key={card.id}
               className="relative group bg-gradient-to-r from-yellow-500 to-green-500 text-white rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
@@ -33,9 +33,9 @@ const CreaditeCard = () => {
               {/* Title and Short Description */}
               <div className="p-4">
                 <h2 className="text-lg font-bold group-hover:text-yellow-300">
-                  {card.title}
+                  {card.name}
                 </h2>
-                <p className="text-sm mt-2">{card.shortDescription}</p>
+                <p className="text-sm mt-2">{card.validity}</p>
               </div>
               {/* Hover Effect */}
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition duration-300 flex items-center justify-center">

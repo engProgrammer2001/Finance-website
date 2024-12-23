@@ -1,16 +1,21 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { API_BASE_URL } from "../../../config/config";
+import { useNavigate } from "react-router-dom";
 
 const AdminDashboard = () => {
   const [users, setUsers] = useState([]);
+  const [loanData, setLoanData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const usersPerPage = 10;
+  const usersPerPage = 7; // Display only 7 users initially
+  const loansPerPage = 8; // Display only 8 loans initially
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
+
+    // Fetch Users
     const fetchUsers = async () => {
       try {
         const response = await axios.get(
@@ -22,42 +27,49 @@ const AdminDashboard = () => {
           }
         );
         setUsers(response.data);
-        setLoading(false);
       } catch (err) {
         setError(err.message);
-        setLoading(false);
       }
     };
+
+    // Fetch Loan Data
+    const fetchLoanData = async () => {
+      try {
+        const response = await axios.get(`${API_BASE_URL}loans/get-loan-data`);
+        setLoanData(response.data.data);
+      } catch (err) {
+        setError(err.message || "An error occurred");
+      } finally {
+        setLoading(false);  // Set loading to false after data is fetched
+      }
+    };
+
     fetchUsers();
+    fetchLoanData();
   }, []);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
-  // Calculate the data to display for the current page
-  const indexOfLastUser = currentPage * usersPerPage;
-  const indexOfFirstUser = indexOfLastUser - usersPerPage;
-  const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
-
-  // Handle page change
-  const totalPages = Math.ceil(users.length / usersPerPage);
-
-  const handleNextPage = () => {
-    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+  // Handle "View More Users" button click
+  const handleViewMoreUsers = () => {
+    navigate("/admin/admin/total-user-admin");
   };
 
-  const handlePreviousPage = () => {
-    if (currentPage > 1) setCurrentPage(currentPage - 1);
+  // Handle "View More Loans" button click
+  const handleViewMoreLoans = () => {
+    navigate("/admin/admin/loan-form-data");
   };
 
   return (
-    <div className="container mx-auto p-4 max-h-screen">
+    <div className="container mx-auto p-4 max-h-full">
       <h1 className="text-2xl font-bold mb-4 text-center">Admin Dashboard</h1>
       <div>
         <h2 className="text-2xl font-bold my-8">Total Users: {users.length}</h2>
       </div>
-      {/* Responsive Table Container */}
-      <div className="overflow-x-auto">
+
+      {/* Users Data */}
+      <div className="overflow-x-auto mb-8">
         <table className="table-auto w-full border-collapse border border-gray-400">
           <thead>
             <tr className="bg-gray-200">
@@ -72,21 +84,17 @@ const AdminDashboard = () => {
             </tr>
           </thead>
           <tbody>
-            {currentUsers.map((user, index) => (
+            {users.slice(0, usersPerPage).map((user, index) => (
               <tr
                 key={user._id}
                 className={index % 2 === 0 ? "bg-white" : "bg-gray-100"}
               >
                 <td className="border border-gray-400 px-4 py-2">
-                  {indexOfFirstUser + index + 1}
+                  {index + 1}
                 </td>
-                <td className="border border-gray-400 px-4 py-2">
-                  {user.fullName}
-                </td>
+                <td className="border border-gray-400 px-4 py-2">{user.fullName}</td>
                 <td className="border border-gray-400 px-4 py-2">{user.email}</td>
-                <td className="border border-gray-400 px-4 py-2">
-                  {user.number}
-                </td>
+                <td className="border border-gray-400 px-4 py-2">{user.number}</td>
                 <td className="border border-gray-400 px-4 py-2">{user.role}</td>
                 <td className="border border-gray-400 px-4 py-2">
                   <img
@@ -105,29 +113,55 @@ const AdminDashboard = () => {
             ))}
           </tbody>
         </table>
-      </div>
-      {/* Pagination Controls */}
-      <div className="flex justify-between items-center mt-4">
         <button
-          className={`px-4 py-2 bg-blue-500 text-white rounded ${
-            currentPage === 1 && "opacity-50 cursor-not-allowed"
-          }`}
-          onClick={handlePreviousPage}
-          disabled={currentPage === 1}
+          onClick={handleViewMoreUsers}
+          className="px-4 py-2 mt-4 bg-blue-500 text-white rounded"
         >
-          Previous
+          View More Users
         </button>
-        <span className="text-lg">
-          Page {currentPage} of {totalPages}
-        </span>
+      </div>
+
+      {/* Loan Data */}
+      <div>
+        <h2 className="text-2xl font-bold my-8">Loan Data</h2>
+        <div className="overflow-x-auto">
+          <table className="table-auto w-full border-collapse border border-gray-400 mb-6">
+            <thead>
+              <tr className="bg-gray-200">
+                <th className="border border-gray-400 px-4 py-2">S.No</th>
+                <th className="border border-gray-400 px-4 py-2">Full Name</th>
+                <th className="border border-gray-400 px-4 py-2">Loan Amount</th>
+                <th className="border border-gray-400 px-4 py-2">Loan Purpose</th>
+                <th className="border border-gray-400 px-4 py-2">Employment Status</th>
+                <th className="border border-gray-400 px-4 py-2">Phone</th>
+                <th className="border border-gray-400 px-4 py-2">City</th>
+                <th className="border border-gray-400 px-4 py-2">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {loanData.slice(0, loansPerPage).map((loan, index) => (
+                <tr
+                  key={loan.aadharNumber}
+                  className={index % 2 === 0 ? "bg-white" : "bg-gray-100"}
+                >
+                  <td className="border border-gray-400 px-4 py-2">{index + 1}</td>
+                  <td className="border border-gray-400 px-4 py-2">{loan.fullName}</td>
+                  <td className="border border-gray-400 px-4 py-2">{loan.loanAmount}</td>
+                  <td className="border border-gray-400 px-4 py-2">{loan.loanPurpose}</td>
+                  <td className="border border-gray-400 px-4 py-2">{loan.employmentStatus}</td>
+                  <td className="border border-gray-400 px-4 py-2">{loan.phone}</td>
+                  <td className="border border-gray-400 px-4 py-2">{loan.city}</td>
+                  <td className="border border-gray-400 px-4 py-2">{loan.date}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
         <button
-          className={`px-4 py-2 bg-blue-500 text-white rounded ${
-            currentPage === totalPages && "opacity-50 cursor-not-allowed"
-          }`}
-          onClick={handleNextPage}
-          disabled={currentPage === totalPages}
+          onClick={handleViewMoreLoans}
+          className="px-4 py-2 bg-blue-500 text-white rounded"
         >
-          Next
+          View More Loans
         </button>
       </div>
     </div>
