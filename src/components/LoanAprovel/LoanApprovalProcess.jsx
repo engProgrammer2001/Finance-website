@@ -7,30 +7,30 @@ const LoanApprovalProcess = () => {
       id: 1,
       title: "Submit Application and Documents",
       description: "Fill out the application form and submit all required documents.",
-      image: "/assets/Approvelmage/a1.png", // Replace with your PNG image path
+      image: "/assets/Approvelmage/a1.png", 
     },
     {
       id: 2,
       title: "3 Days Cooling Period",
       description: "Wait for 3 days while we review your application.",
-      image: "/assets/Approvelmage/a2.png", // Replace with your PNG image path
+      image: "/assets/Approvelmage/a2.png", 
     },
     {
       id: 3,
       title: "Getting Approval",
       description: "Once reviewed, your loan will be approved.",
-      image: "/assets/Approvelmage/a3.png", // Replace with your PNG image path
+      image: "/assets/Approvelmage/a3.png", 
     },
     {
       id: 4,
       title: "Disbursement",
       description: "Receive the loan amount in your bank account.",
-      image: "/assets/Approvelmage/a4.png", // Replace with your PNG image path
+      image: "/assets/Approvelmage/a4.png", 
     },
   ];
 
   return (
-    <div className="bg-soft-gray py-16" style={{ backgroundColor: "#f5f5f5" }}>
+    <div className="bg-soft-gray py-16 px-4" style={{ backgroundColor: "#f5f5f5" }}>
       <h2 className="text-4xl font-extrabold text-center " style={{ color: "#fbc02d" }}>
         Loan Approval Process
       </h2>

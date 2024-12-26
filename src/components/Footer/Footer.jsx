@@ -10,7 +10,9 @@ const Footer = () => {
   useEffect(() => {
     const fetchLogo = async () => {
       try {
-        const response = await axios.get(`${API_BASE_URL}footerlogo/get-all-footer-logo`);
+        const response = await axios.get(
+          `${API_BASE_URL}footerlogo/get-all-footer-logo`
+        );
         console.log("Fetched logos:", response.data);
         setLogoUrl(response.data);
       } catch (error) {
@@ -58,7 +60,6 @@ const Footer = () => {
                 <li>Business Loan</li>
                 <li>Home Loan</li>
                 <li>Loan against property</li>
-                <li>Loan with Reputed Bank with NBFC</li>
                 <li>Gold Loan</li>
                 <li>Car Loan</li>
                 <li className="text-lg font-bold underline">Credit Card</li>
@@ -88,22 +89,28 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/loan" className="hover:text-yellow-500">
+                  <Link to="/our-loans" className="hover:text-yellow-500">
                     Loan
                   </Link>
                 </li>
                 <li>
-                  <Link to="/projects" className="hover:text-yellow-500">
+                  <Link
+                    to="/sb-finance/credit-card"
+                    className="hover:text-yellow-500"
+                  >
                     Credit Card
                   </Link>
                 </li>
                 <li>
-                  <Link to="/insurance" className="hover:text-yellow-500">
+                  <Link
+                    to="/sb-finance/insurance"
+                    className="hover:text-yellow-500"
+                  >
                     Insurance
                   </Link>
                 </li>
                 <li>
-                  <Link to="/faq" className="hover:text-yellow-500">
+                  <Link to="/our-faq" className="hover:text-yellow-500">
                     FAQ's
                   </Link>
                 </li>
@@ -112,22 +119,7 @@ const Footer = () => {
                     Contact Us
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    to="/sb-finance/apply-loan/#features"
-                    className="hover:text-yellow-500"
-                  >
-                    Features
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="#check_eligibility"
-                    className="hover:text-yellow-500"
-                  >
-                    Check Eligibility
-                  </Link>
-                </li>
+
                 <li>
                   <Link
                     to="/sb-finance/apply-loan"
@@ -158,28 +150,28 @@ const Footer = () => {
             <div>
               <h3 className="text-2xl font-semibold mb-4">Contact</h3>
               <p className="text-lg">
-                <span className="font-semibold text-yellow-500">
+                <span className="font-semibold text-orange-400">
                   Address :{" "}
                 </span>
                 Office No - 123B, Jaina Tower 2nd, 1st Floor, District Center
                 Janakpuri , Delhi 110058
               </p>
               <p className="text-lg">
-                <span className="font-semibold text-yellow-500">
+                <span className="font-semibold text-orange-400">
                   Total branches :{" "}
                 </span>
                 01
               </p>
               <p className="text-lg">
-                <span className="font-semibold text-yellow-500">Email : </span>
+                <span className="font-semibold text-orange-400">Email : </span>
                 loanadvisor.roshan@gmail.com
               </p>
               <p className="text-lg">
-                <span className="font-semibold text-yellow-500">Phone :</span>{" "}
+                <span className="font-semibold text-orange-400">Phone :</span>{" "}
                 +91 9103521459
               </p>
               <p className="text-lg">
-                <span className="font-semibold text-yellow-500">
+                <span className="font-semibold text-orange-400">
                   Whatsapp :
                 </span>{" "}
                 +91 9103521459
@@ -205,7 +197,7 @@ const Footer = () => {
                   <FaInstagram className="text-3xl text-red-400 cursor-pointer" />
                 </a>
                 <a
-                  href="https://www.youtube.com/@roshansingh-rw1ir"
+                  href="https://youtube.com/@roshansingh-z3t?si=hqHooOj9fVfQ3wEn"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white p-2 rounded-full transform transition-all duration-100 hover:scale-110"
@@ -213,6 +205,13 @@ const Footer = () => {
                   <FaYoutube className="text-3xl text-red-600 cursor-pointer" />
                 </a>
               </div>
+              <h2 className="py-3 font-bold text-lg ">
+                <span className="text-orange-400">
+                  UDYAM REGISTRATION NUMBER :
+                </span>{" "}
+                UDYAM-DL-03-0047404
+              </h2>
+              <p></p>
             </div>
           </div>
           {/* Second Row for Copyright */}
@@ -225,7 +224,8 @@ const Footer = () => {
                 className="text-orange-400 font-bold"
               >
                 Divy Webb Creation
-              </a>
+              </a>{" "}
+              and Protected by SSL Certificate
             </p>
           </div>
         </div>

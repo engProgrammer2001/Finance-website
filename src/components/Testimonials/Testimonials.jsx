@@ -3,7 +3,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import SwiperCore from "swiper";
-import { FaStar, FaRegStar } from "react-icons/fa"; // Import icons for stars
+import { FaStar, FaRegStar } from "react-icons/fa"; 
 
 // Import SwiperCore and register the modules
 SwiperCore.use([Autoplay, Navigation, Pagination]);
@@ -11,7 +11,7 @@ SwiperCore.use([Autoplay, Navigation, Pagination]);
 const Testimonial = () => {
   const testimonials = [
     {
-      image: "/assets/Testimonial/t1.jpg",
+      image: "/assets/Testimonial/t2.png",
       name: "Rohit Kumar",
       message:
         "I got a personal loan through Samast Bharat Finance, and the process was very smooth. Their team is helpful and quick. Thank you!",
@@ -19,7 +19,7 @@ const Testimonial = () => {
       rating: 5,
     },
     {
-      image: "/assets/Testimonial/t2.jpg",
+      image: "/assets/Testimonial/t6.png",
       name: "Ashok Singh",
       message:
         "Samast Bharat Finance helped me secure a loan for my business. The entire experience was easy, and I am happy with their service.",
@@ -27,7 +27,7 @@ const Testimonial = () => {
       rating: 4,
     },
     {
-      image: "/assets/Testimonial/t5.jpg",
+      image: "/assets/Testimonial/t3.png",
       name: "Sushma Singha",
       message:
         "I wanted to save for my child’s education. Their savings plan is simple and fits my needs perfectly. Highly recommended!",
@@ -35,15 +35,15 @@ const Testimonial = () => {
       rating: 5,
     },
     {
-      image: "/assets/Testimonial/t4.jpg",
-      name: "Ramesh Kumar",
+      image: "/assets/Testimonial/t5.png",
+      name: "Sulekha Singh",
       message:
         "Their loan repayment process is very convenient, and the support team is always there to help. Great service!",
       service: "Loan Repayment Assistance",
       rating: 4,
     },
     {
-      image: "/assets/Testimonial/t6.jpg",
+      image: "/assets/Testimonial/7.png",
       name: "Krishna Bansal",
       message:
         "Thanks to FB-Finance, I now have a better understanding of how to invest my money. Their team explained everything very clearly.",
@@ -51,7 +51,7 @@ const Testimonial = () => {
       rating: 5,
     },
     {
-      image: "/assets/Testimonial/t3.jpg",
+      image: "/assets/Testimonial/t8.jpeg",
       name: "Nagendra Marathi",
       message:
         "I used their EMI calculator to plan my loan. It’s super easy to use and saved me a lot of time. Great tool!",
@@ -59,15 +59,15 @@ const Testimonial = () => {
       rating: 4,
     },
     {
-      image: "/assets/Testimonial/t7.jpg",
-      name: "Subhash Rathor",
+      image: "/assets/Testimonial/t11.png",
+      name: "Rajni Rathor",
       message:
         "Their home loan process was quick and hassle-free. I am very happy with my decision to choose Samast Bharat Finance.",
       service: "Home Loan",
       rating: 5,
     },
     {
-      image: "/assets/Testimonial/t8.jpg",
+      image: "/assets/Testimonial/t4.png",
       name: "Suneeta Baghel",
       message:
         "Samast Bharat Finance has excellent customer service. They guided me step-by-step for my car loan. Highly satisfied!",

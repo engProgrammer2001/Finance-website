@@ -47,7 +47,7 @@ const BenifitsOfPersonalLoan = () => {
       <div className="overflow-x-auto">
         <table className="table-auto w-full border border-gray-300">
           <thead>
-            <tr className="bg-gray-800 text-white">
+            <tr className="bg-green-500 text-slate-800">
               <th className="px-4 py-2 text-left">Benefit</th>
               <th className="px-4 py-2 text-left">Description</th>
             </tr>

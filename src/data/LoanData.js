@@ -1,7 +1,7 @@
 const loanOptions = [
   {
     id: 1,
-    title: "Personal Loan",
+    title: "Personal Loans",
     shortDescription:
       "Quick, flexible loans for personal needs like medical expenses or travel.",
     description:
@@ -11,16 +11,23 @@ const loanOptions = [
     loanAmount: "₹50,000 - ₹5,00,000",
     loanTenure: "12 - 60 months",
     eligibility: "Age: 21-58 years, CIBIL score: 650+",
-    documentsRequired: ["Aadhar Card", "PAN Card", "Bank Statements"],
+    documentsRequired: [
+      "Aadhar Card",
+      "PAN Card",
+      "Bank Statements",
+      "3 - Months Salary Slip",
+      "3 - Bank Statement",
+      "1 - Passphort Size Photo",
+    ],
     processingFee: "1% of loan amount",
-    repaymentMode: "EMI via bank account",
+    repaymentMode: "Auto debit and EMI via bank account",
     prepaymentCharges: "No prepayment charges",
     features: ["Quick approval", "No collateral needed", "Low interest rate"],
-    customerSupport: "1800-123-4567",
+    customerSupport: "loanadvisor.roshan@gmail.com",
   },
   {
     id: 2,
-    title: "Home Loan",
+    title: "Home Loans",
     shortDescription:
       "Affordable loans to purchase your dream home or property.",
     description:
@@ -44,11 +51,11 @@ const loanOptions = [
       "Flexible repayment options",
       "Tax benefits",
     ],
-    customerSupport: "1800-123-4567",
+    customerSupport: "loanadvisor.roshan@gmail.com",
   },
   {
     id: 3,
-    title: "Car Loan",
+    title: "Car Loans",
     shortDescription: "Low-interest loans for buying your car, with easy EMIs.",
     description:
       "Whether it's your first car or an upgrade, our Car Loans offer attractive terms and easy access to the funds you need. You can avail a car loan ranging from ₹1,00,000 to ₹50,00,000, with a flexible tenure ranging from 12 to 84 months. To qualify, applicants need to be between the ages of 21 and 65 years, and have a minimum CIBIL score of 700. The necessary documents include Aadhar Card, PAN Card, Income Proof, and RC Book of the car. With a competitive interest rate of 9.75%, you can repay the loan in easy EMIs through your bank account. The processing fee for this loan is 0.5% of the loan amount, and there are no prepayment charges. This loan comes with various benefits such as low EMIs, quick disbursal, and flexible tenure options, making it the ideal choice for car buyers looking for a convenient and affordable financing option.",
@@ -62,34 +69,11 @@ const loanOptions = [
     repaymentMode: "EMI via bank account",
     prepaymentCharges: "No prepayment charges",
     features: ["Low EMIs", "Quick disbursal", "Flexible tenure options"],
-    customerSupport: "1800-123-4567",
+    customerSupport: "loanadvisor.roshan@gmail.com",
   },
   {
     id: 4,
-    title: "NBFC Loan",
-    shortDescription:
-      "Loans for education, business, or personal needs with quick approval.",
-    description:
-      "NBFC Loans provide quick and easy access to funds for individuals who need financial support for education, business, or personal needs. The loan amount ranges from ₹10,000 to ₹50,00,000, and the tenure can be between 12 to 48 months. To be eligible for this loan, you must be between the ages of 18 and 60 years, and have a CIBIL score of 650 or above. The required documents include Aadhar Card, PAN Card, and Education Documents. The loan comes with an interest rate of 12.5%, a processing fee of 2% of the loan amount, and repayment via easy EMIs through your bank account. The prepayment charge is 1.5% of the outstanding loan amount. This loan offers several benefits such as no collateral required, quick approval, and flexible loan amounts, making it ideal for anyone looking to invest in their education or business without facing long approval times.",
-    image: "/assets/loanImaes/nb.png",
-    interestRate: "12.5%",
-    loanAmount: "₹10,000 - ₹50,00,000",
-    loanTenure: "12 - 48 months",
-    eligibility: "Age: 18-60 years, CIBIL score: 650+",
-    documentsRequired: ["Aadhar Card", "PAN Card", "Education Documents"],
-    processingFee: "2% of loan amount",
-    repaymentMode: "EMI via bank account",
-    prepaymentCharges: "1.5% of outstanding loan amount",
-    features: [
-      "No collateral required",
-      "Flexible loan amount",
-      "Quick approval",
-    ],
-    customerSupport: "1800-123-4567",
-  },
-  {
-    id: 5,
-    title: "Business Loan",
+    title: "Business Loans",
     shortDescription:
       "Loans to support business growth with flexible terms and quick disbursal.",
     description:
@@ -108,12 +92,12 @@ const loanOptions = [
       "Fast processing",
       "No collateral required",
     ],
-    customerSupport: "1800-123-4567",
+    customerSupport: "loanadvisor.roshan@gmail.com",
   },
 
   {
-    id: 6,
-    title: "Gold Loan",
+    id: 5,
+    title: "Gold Loans",
     shortDescription:
       "Quick financial support with gold as collateral. Loan amount: ₹10,000 - ₹25,00,000. Interest Rate: 7.5%. Tenure: 3 - 24 months.",
     description:
@@ -132,11 +116,11 @@ const loanOptions = [
       "Low interest rates",
       "No credit score check",
     ],
-    customerSupport: "1800-123-4567",
+    customerSupport: "loanadvisor.roshan@gmail.com",
   },
   {
-    id: 7,
-    title: "Property Loan",
+    id: 6,
+    title: "Property Loans",
     shortDescription:
       "Finance real estate investments with loans ranging from ₹5,00,000 to ₹20,00,000. Interest Rate: 8.0%. Tenure: 5 - 20 years.",
     description:
@@ -151,21 +135,26 @@ const loanOptions = [
     repaymentMode: "EMI via bank account",
     prepaymentCharges: "2% of outstanding loan amount",
     features: ["Low interest rates", "Flexible repayment options"],
-    customerSupport: "1800-123-4567",
+    customerSupport: "loanadvisor.roshan@gmail.com",
   },
   {
-    id: 8,
-    title: "Emergency Loan",
+    id: 7,
+    title: "Education Loans",
     shortDescription:
-      "Quick financial assistance for emergencies. Loan amount: ₹20,000 - ₹5,00,000. Interest Rate: 10.0%. Tenure: 6 - 36 months.",
+      "Comprehensive financial support for your education. Loan amount: ₹50,000 - ₹10,00,000. Interest Rate: 8.5%. Tenure: 12 - 84 months.",
     description:
-      "Emergency Loans are designed to provide immediate financial assistance during medical emergencies or other urgent situations. The loan amount ranges from ₹20,000 to ₹5,00,000, with a tenure of 6 to 36 months. The eligibility criteria include being between 21 and 60 years old, with a CIBIL score of 650 or above. Required documents include Aadhar Card, Medical Bills, and Income Proof. The loan comes with an interest rate of 10.0%, and the processing fee is 1% of the loan amount. Repayment is made through EMI via a bank account, and there are no prepayment charges. This loan is perfect for individuals in need of quick financial assistance for medical emergencies or urgent personal matters.",
-    image: "/assets/loanImaes/el5.jpeg",
+      "Education Loans are designed to help students achieve their academic aspirations by covering tuition fees, living expenses, and other educational costs. The loan amount ranges from ₹50,000 to ₹10,00,000, with a tenure of 12 to 84 months. The eligibility criteria include being between 18 and 35 years old, with a co-applicant having a stable income and a CIBIL score of 650 or above. Required documents include Aadhar Card, Admission Letter, Fee Structure, and Income Proof. The loan comes with an interest rate of 8.5%, and the processing fee is 1% of the loan amount. Repayment is made through EMI via a bank account, and there are no prepayment charges. This loan is perfect for students seeking financial support for higher education.",
+    image: "/assets/loanImaes/cl.png",
     interestRate: "10.0%",
-    loanAmount: "₹20,000 - ₹5,00,000",
-    loanTenure: "6 - 36 months",
-    eligibility: "Age: 21-60 years, CIBIL score: 650+",
-    documentsRequired: ["Aadhar Card", "Medical Bills", "Income Proof"],
+    loanAmount: "₹50,000 - ₹10,00,000",
+    loanTenure: "12 - 84 months",
+    eligibility: "Age: 18-35 years, Co-applicant with CIBIL score: 650+",
+    documentsRequired: [
+      "Aadhar Card",
+      "Admission Letter",
+      "Fee Structure",
+      "Income Proof",
+    ],
     processingFee: "1% of loan amount",
     repaymentMode: "EMI via bank account",
     prepaymentCharges: "No prepayment charges",
@@ -173,9 +162,37 @@ const loanOptions = [
       "Instant approval",
       "Quick disbursal",
       "Medical emergency support",
+      "Affordable interest rates",
+      "Flexible repayment options",
+      "Covers tuition and living expenses",
     ],
-    customerSupport: "1800-123-4567",
+    customerSupport: "loanadvisor.roshan@gmail.com",
   },
+  {
+    id: 8,
+    title: "Corporate Loans",
+    shortDescription:
+      "Empowering businesses with financial solutions. Loan amount: ₹1,00,000 - ₹50,00,000. Interest Rate: 12.0%. Tenure: 12 - 60 months.",
+    description:
+      "Corporate Loans are designed to provide businesses with the financial support they need to expand operations, purchase equipment, or manage working capital. The loan amount ranges from ₹1,00,000 to ₹50,00,000, with a tenure of 12 to 60 months. The eligibility criteria include a business registration of at least 2 years, a CIBIL score of 700 or above, and a minimum annual turnover of ₹20,00,000. Required documents include Business Registration Certificate, PAN Card, GST Returns, and Financial Statements. The loan comes with an interest rate of 12.0%, and the processing fee is 2% of the loan amount. Repayment is made through EMI via a bank account, and there are flexible prepayment options. This loan is ideal for businesses looking to achieve growth and manage their financial requirements efficiently.",
+    image: "/assets/loanImaes/cl.png",
+    interestRate: "12.0%",
+    loanAmount: "₹1,00,000 - ₹50,00,000",
+    loanTenure: "12 - 60 months",
+    eligibility: "Business registration: 2+ years, CIBIL score: 700+, Annual turnover: ₹20,00,000+",
+    documentsRequired: ["Business Registration Certificate", "PAN Card", "GST Returns", "Financial Statements"],
+    processingFee: "2% of loan amount",
+    repaymentMode: "EMI via bank account",
+    prepaymentCharges: "Flexible prepayment options",
+    features: [
+      "Tailored financial solutions for businesses",
+      "Supports working capital and expansion needs",
+      "Competitive interest rates and flexible tenures"
+    ],
+    customerSupport: "corporateloan.support@gmail.com",
+  }
+  
+
 ];
 
 export default loanOptions;

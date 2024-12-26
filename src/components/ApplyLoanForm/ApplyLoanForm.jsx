@@ -72,14 +72,16 @@ const ApplyLoanForm = () => {
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      setMessage("An error occurred while submitting the form. Please try again.");
+      setMessage(
+        "An error occurred while submitting the form. Please try again."
+      );
       setMessageType("error");
     }
   };
 
   return (
     <div className="max-w-2xl mx-auto p-3 bg-gray-100 shadow-md rounded-md">
-      <h2 className="text-xl font-bold mb-4 text-center text-orange-400">
+      <h2 className="text-3xl font-bold mb-4 text-center text-orange-400">
         Loan Application Form
       </h2>
 
@@ -87,7 +89,9 @@ const ApplyLoanForm = () => {
       {message && (
         <div
           className={`text-center p-2 mb-4 rounded ${
-            messageType === "success" ? "bg-green-200 text-green-800" : "bg-red-200 text-red-800"
+            messageType === "success"
+              ? "bg-green-200 text-green-800"
+              : "bg-red-200 text-red-800"
           }`}
         >
           {message}
@@ -237,7 +241,8 @@ const ApplyLoanForm = () => {
             required
           />
           <label className="text-sm">
-            I agree to the terms and conditions.
+            I agree to the <a className="text-blue-600" href="/privacy-and-policy">terms Conditions</a>{" "}
+            and <a className="text-blue-600" href="/privacy-and-policy">Privacy and Policy</a>
           </label>
         </div>
         <button

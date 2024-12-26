@@ -50,6 +50,10 @@ const About = () => {
         </div>
       </div>
       {/* Team Section */}
+      <div>
+        <h2 className="text-4xl font-bold text-slate-800 text-center mt-8">Our Team</h2>
+        <p className="p-4 lg:px-40 text-center text-slate-700">At SB-Finance, our team is the cornerstone of our success. We are a group of dedicated, skilled, and passionate professionals who bring diverse expertise to the table, united by a shared commitment to delivering exceptional financial solutions.</p>
+      </div>
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
         {/* Left Section (Image) */}
         <div className="flex flex-col justify-center bg-white rounded-lg shadow-lg p-6">
@@ -100,7 +104,7 @@ const About = () => {
             <img
               src="/assets/Team/Chhaya suryavanshi.jpeg"
               alt="Chhaya Suryavanshi"
-              className="w-full h-80 object-cover rounded-md mb-4"
+              className="w-full h-96 object-cover rounded-md mb-4"
             />
             <h3 className="text-lg font-semibold text-green-500 uppercase text-center">
               Chhaya Suryavanshi
@@ -131,21 +135,50 @@ const About = () => {
         <CountUpSection />
       </div>
 
-      {/* vision and mission  */}
+      {/* Vision and Mission Section */}
       <div className="py-10">
-        <div className="flex items-center justify-center">
-          <img src="/assets/about/vm.png" alt="" />
-        </div>
-        <div className="py-4 lg:px-44">
-          <p className="text-2xl text-center leading-9 py-5 text-slate-700 font-bold">
-            At Samast Bharat Finance (SB-Finance), our mission is to empower
-            individuals and businesses with accessible, reliable, and innovative
-            financial solutions, helping them achieve their goals with ease. Our
-            vision is to become a trusted leader in the financial industry,
-            setting new standards for customer satisfaction, transparency, and
-            excellence while fostering financial inclusion for a better and more
-            prosperous future.
-          </p>
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-center gap-8 px-4 lg:px-16">
+          {/* Mission Section */}
+          <div className="flex flex-col bg-gray-100 p-4 rounded-lg hover:scale-105 transition duration-300 items-center justify-center w-full lg:w-1/2">
+            <img
+              src="/assets/about/m1.png"
+              alt="Mission"
+              className="w-full h-auto max-w-[300px] lg:max-w-[400px] object-contain"
+            />
+            <p className="text-lg text-center lg:text-left leading-7 py-5 text-slate-700 font-semibold ">
+              At SB-Finance, our mission is to redefine the financial landscape
+              by providing comprehensive, accessible, and innovative financial
+              solutions that cater to the unique needs of individuals and
+              businesses. We are committed to empowering our clients with the
+              tools and resources they need to achieve financial stability and
+              success. <br />
+              Through our diverse range of services, including loans, credit
+              cards, and insurance solutions, we aim to build lasting
+              relationships founded on trust, transparency, and reliability. Our
+              goal is to remove financial barriers and unlock opportunities for
+              growth, enabling every client to turn their dreams into reality.
+            </p>
+          </div>
+          {/* Vision Section */}
+          <div className="flex flex-col bg-gray-100 p-4 rounded-lg hover:scale-105 transition duration-300 items-center justify-center w-full lg:w-1/2 ">
+            <img
+              src="/assets/about/vision.png"
+              alt="Vision"
+              className="w-full h-auto max-w-[300px] lg:max-w-[400px] object-contain"
+            />
+            <p className="text-xl text-center lg:text-left leading-7 py-5 text-slate-700 font-semibold ">
+              At SB-Finance, our vision is to establish ourselves as a trusted
+              and transformative leader in the financial industry, reshaping the
+              standards of excellence, transparency, and customer satisfaction.
+              We aspire to be the financial partner of choice for individuals
+              and businesses by consistently delivering innovative, reliable,
+              and tailored solutions that meet their ever-evolving needs. <br />
+              Our commitment extends beyond providing financial services; we are
+              dedicated to fostering financial inclusion and empowerment,
+              ensuring that opportunities to grow and succeed are accessible to
+              all, regardless of their background or circumstances.
+            </p>
+          </div>
         </div>
       </div>
 

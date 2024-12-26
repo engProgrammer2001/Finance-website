@@ -113,7 +113,7 @@ function Navbar() {
             <FaInstagram className="text-3xl text-red-600 hover:text-red-700 cursor-pointer" />
           </a>
           <a
-            href="https://www.youtube.com/@roshansingh-rw1ir"
+            href="https://youtube.com/@roshansingh-z3t?si=hqHooOj9fVfQ3wEn"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="YouTube"
@@ -123,8 +123,9 @@ function Navbar() {
           </a>
         </div>
       </div>
+
       {/* WhatsApp and Call Icons */}
-      <div className="fixed top-48 right-0 flex flex-col items-end gap-3 z-[1000]">
+      <div className="fixed top-72 lg:top-44  right-0 flex flex-col items-end gap-3 z-[1000]">
         {/* WhatsApp Background */}
         <div className="bg-white px-3 p-1 hover:px-6 transition-all duration-200 rounded-l-full shadow-lg flex items-center">
           <a
@@ -166,7 +167,7 @@ function Navbar() {
           </div>
           {/* Toggle Button for Mobile */}
           <button
-            className="text-slate-800 text-4xl md:hidden bg-white rounded-lg p-1"
+            className="text-slate-800 text-3xl md:hidden rounded-lg p-1 pr-3"
             onClick={() => setIsOpen(!isOpen)}
           >
             ☰
@@ -320,7 +321,6 @@ function Navbar() {
             </div>
           )}
         </div>
-
         {/* Toggle Menu for Mobile */}
         {isOpen && (
           <div className="md:hidden mt-8 space-y-2">

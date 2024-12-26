@@ -21,12 +21,14 @@ import Profile from "../pages/Profile";
 import PrivacyAndPolicy from "../components/PrivacyAndPolicy/PrivacyAndPolicy";
 import TermsAndCondition from "../components/TermsAndCondition/TermsAndCondition";
 import CreditCardData from "../data/creditCardData";
+import ExqueryForm from "../components/enqueryForm/EnqueryForm";
 
 const CustomerRouters = () => {
   return (
     <div>
       <div>
         <Navbar />
+        <ExqueryForm/>
       </div>
       <Routes>
         <Route path="/" element={<Home />} />

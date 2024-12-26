@@ -7,7 +7,7 @@ import { FaMoneyCheckAlt } from "react-icons/fa";
 
 const CheckEligibility = () => {
   return (
-    <div id="check_eligibility" className="py-10 bg-white">
+    <div id="check_eligibility" className="py-10 px-4 bg-white">
       <div className="max-w-7xl mx-auto ">
         <div className="py-12">
           <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-zinc-800 text-2xl lg:text-3xl font-bold text-center">
@@ -19,7 +19,7 @@ const CheckEligibility = () => {
           <div className="flex flex-col items-center border-8 p-6 bg-orange-400 rounded-full">
             <FaAmericanSignLanguageInterpreting className="text-5xl text-slate-800" />
             <h2 className="text-2xl text-slate-800 py-4 font-bold text-center">
-              Your Age should be 21 Years to 65 Years
+              Your Age should be 21 Years to 55 Years
             </h2>
           </div>
 

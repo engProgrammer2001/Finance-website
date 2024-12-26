@@ -49,18 +49,29 @@ const Rules = () => {
   const [selectedRule, setSelectedRule] = useState(null);
   return (
     <div>
-      <div
-        className=""
-        style={{
-          backgroundImage: "url('/assets/rules/r1.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <h1 className="py-24 text-slate-700 font-extrabold text-4xl lg:text-5xl text-center bg-opacity-75">
-          6 Golden Rules For Taking A Loan
-        </h1>
+      <div className="relative">
+        {/* Pseudo-element for the background image */}
+        <div className="relative">
+          {/* Background overlay */}
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                "url('/assets/rules/roles1.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              zIndex: -1,
+            }}
+          ></div>
+          {/* Black opacity overlay */}
+          <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
+          {/* Text content */}
+          <h1 className="py-24 text-green-500 font-extrabold text-4xl lg:text-5xl text-center relative">
+            6 Golden Rules For Taking A Loan
+          </h1>
+        </div>
       </div>
+
       {/* Main content */}
       <div className="flex flex-col lg:flex-row gap-4 p-4">
         {/* Left Part - List of Rules */}
@@ -71,7 +82,7 @@ const Rules = () => {
                 key={rule.id}
                 className={`flex justify-between items-center cursor-pointer p-2 py-3 lg:py-5 rounded-md border-2 border-slate-400 font-bold text-lg ${
                   selectedRule?.id === rule.id
-                    ? "bg-[#e8f4f8]"
+                    ? "bg-[#fbc02d]"
                     : "hover:bg-[#f5f5f5]"
                 }`}
                 onClick={() => setSelectedRule(rule)}
@@ -98,7 +109,7 @@ const Rules = () => {
         <div className="flex-1 relative top-[-50px] lg:top-12 lg:right-8 h-[300px] bg-[#f5f5f5] p-8 rounded-md shadow-md">
           {selectedRule ? (
             <div>
-              <h3 className="text-2xl font-semibold mb-2 text-slate-700">
+              <h3 className="text-2xl font-semibold mb-2 text-green-400">
                 {selectedRule.title} {selectedRule.number}
               </h3>
               <p className="text-slate-800 text-sm font-bold">

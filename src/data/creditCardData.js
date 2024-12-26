@@ -201,10 +201,10 @@ const CreditCardData = [
   },
   {
     id: 5,
-    name: "IDFC FIRST Bank Credit Card",
-    image: "/assets/CrediteCard/idfc.png",
+    name: "HDFC FIRST Bank Credit Card",
+    image: "/assets/CrediteCard/hdfc.webp",
     details: {
-      CardName: "IDFC FIRST Select Card",
+      CardName: "HDFC FIRST Select Card",
       CardType: "Premium Cashback and Rewards",
       SourcingCriteria: {
         AgeCriteria:

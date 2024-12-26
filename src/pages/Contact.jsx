@@ -30,7 +30,10 @@ const Contact = () => {
           Get In Touch
         </h2>
         <p className="text-lg">
-        At Samast Bharat Finance (SB-Finance), we are always here to assist you with your financial needs. Whether you have questions about our loan services, credit card options, or insurance plans, our team is ready to provide you with the information and support you need.
+          At Samast Bharat Finance (SB-Finance), we are always here to assist
+          you with your financial needs. Whether you have questions about our
+          loan services, credit card options, or insurance plans, our team is
+          ready to provide you with the information and support you need.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full my-10">
           {/* Our Office */}
@@ -63,7 +66,7 @@ const Contact = () => {
               Call Us
             </h3>
             <p className="text-muted-foreground text-slate-800 font-bold">
-              +91 9103521459 <br /> +91 9103521459
+              +91 9103521459 <br /> 
             </p>
           </div>
           {/* Email Us */}
@@ -109,14 +112,14 @@ const Contact = () => {
           {/* Left Section: Image */}
           <div className="w-full md:w-1/2 p-4 relative flex items-end justify-center">
             <iframe
-              title="location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d409377.0553719105!2d-74.30932477148002!3d40.69701929469058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e1!3m2!1sen!2sin!4v1733999701658!5m2!1sen!2sin"
-              width="660"
+              title="Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3702.648000830956!2d77.07888287571977!3d28.629405375666522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d05cddbe8b8db%3A0x162744fb6e4c116!2sJaina%20Tower%20-2%20Commerical%20Complex!5e1!3m2!1sen!2sin!4v1735022927403!5m2!1sen!2sin"
+              width="600"
               height="560"
-              className="bg-white p-4 rounded-lg "
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
+              className="bg-white p-3 rounded-lg"
             ></iframe>
           </div>
           {/* Right Section: Slider */}

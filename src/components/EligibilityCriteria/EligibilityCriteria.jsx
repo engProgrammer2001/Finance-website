@@ -5,7 +5,7 @@ const EligibilityCriteria = () => {
     { label: "Citizenship", detail: "Indian" },
     {
       label: "Age",
-      detail: "At least 23 years when applying and a maximum of 65 years.",
+      detail: "At least 21 years when applying and a maximum of 55 years.",
     },
     {
       label: "Employment",
