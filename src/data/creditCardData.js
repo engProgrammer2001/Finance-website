@@ -201,7 +201,7 @@ const CreditCardData = [
   },
   {
     id: 5,
-    name: "HDFC FIRST Bank Credit Card",
+    name: "HDFC Bank Credit Card",
     image: "/assets/CrediteCard/hdfc.webp",
     details: {
       CardName: "HDFC FIRST Select Card",
@@ -406,7 +406,7 @@ const CreditCardData = [
   },
   {
     id: 9,
-    name: "Kotak Bank Credit Card",
+    name: "Kotak Bank Credit Card (Coming soon...)",
     image: "/assets/CrediteCard/kotak.jpeg",
     details: {
       CardName: "League Platinum",

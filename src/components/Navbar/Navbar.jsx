@@ -95,7 +95,7 @@ function Navbar() {
         {/* Social Media Icons */}
         <div className="flex space-x-5">
           <a
-            href="https://www.facebook.com/profile.php?id=100008257113720"
+            href="https://www.facebook.com/profile.php?id=61571059146673&mibextid=ZbWKwL"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
@@ -104,7 +104,7 @@ function Navbar() {
             <FaFacebook className="text-3xl text-blue-600 hover:text-blue-800 cursor-pointer" />
           </a>
           <a
-            href="https://www.instagram.com/roshan_singh4092?igsh=MTg0NHM3ZzJxdHBpMw%3D%3D"
+            href="https://www.instagram.com/sbfinance4092/profilecard/?igsh=MWZpeXhqaGZoNmltbA=="
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"

@@ -36,7 +36,6 @@ export const Login = () => {
         email: formData.email,
         password: formData.password,
       });
-      console.log("response", response);
 
       if (response.status === 200) {
         const { user, token, message } = response.data;

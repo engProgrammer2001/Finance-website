@@ -36,7 +36,6 @@ const CrediteCardFaq = () => {
   ];
 
   const [activeIndex, setActiveIndex] = useState(null);
-
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };

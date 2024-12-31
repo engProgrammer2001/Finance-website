@@ -62,7 +62,7 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 max-h-full">
+    <div className="container mx-auto p-4 min-h-screen"> 
       <h1 className="text-2xl font-bold mb-4 text-center">Admin Dashboard</h1>
       <div>
         <h2 className="text-2xl font-bold my-8">Total Users: {users.length}</h2>

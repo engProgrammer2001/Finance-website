@@ -39,7 +39,6 @@ const About = () => {
               financial future!
             </p>
           </div>
-          {/* Right Section (Images) */}
           <div className="hidden lg:block">
             <img
               src="/assets/about/about1.png"
@@ -51,14 +50,21 @@ const About = () => {
       </div>
       {/* Team Section */}
       <div>
-        <h2 className="text-4xl font-bold text-slate-800 text-center mt-8">Our Team</h2>
-        <p className="p-4 lg:px-40 text-center text-slate-700">At SB-Finance, our team is the cornerstone of our success. We are a group of dedicated, skilled, and passionate professionals who bring diverse expertise to the table, united by a shared commitment to delivering exceptional financial solutions.</p>
+        <h2 className="text-4xl font-bold text-slate-800 text-center mt-8">
+          Our Team
+        </h2>
+        <p className="p-4 lg:px-40 text-center text-slate-700">
+          At SB-Finance, our team is the cornerstone of our success. We are a
+          group of dedicated, skilled, and passionate professionals who bring
+          diverse expertise to the table, united by a shared commitment to
+          delivering exceptional financial solutions.
+        </p>
       </div>
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
         {/* Left Section (Image) */}
         <div className="flex flex-col justify-center bg-white rounded-lg shadow-lg p-6">
           <img
-            src="/assets/Team/Roshan Singh.jpeg"
+            src="/assets/Team/roshan copy.png"
             alt="Roshan Singh"
             className="w-full h-full rounded-lg shadow-lg object-cover"
           />
@@ -74,7 +80,7 @@ const About = () => {
           {/* Team Member 1 */}
           <div className="flex flex-col items-center bg-gray-100 rounded-lg shadow-md p-4">
             <img
-              src="/assets/Team/t4.jpeg"
+              src="/assets/Team/Nandni.png"
               alt="Roshan Singh"
               className="w-full h-96 object-cover rounded-md mb-4"
             />
@@ -88,7 +94,7 @@ const About = () => {
           {/* Team Member 2 */}
           <div className="flex flex-col items-center bg-gray-100 rounded-lg shadow-md p-4">
             <img
-              src="/assets/Team/Simran Sonkar.jpeg"
+              src="/assets/Team/simran.png"
               alt="Simran Sonkar"
               className="w-full h-96 object-cover rounded-md mb-4"
             />
@@ -113,11 +119,10 @@ const About = () => {
               Team Member
             </h4>
           </div>
-
           {/* Team Member 4 */}
           <div className="flex flex-col items-center bg-gray-100 rounded-lg shadow-md p-4">
             <img
-              src="/assets/Team/Pooja Diwakar.jpeg"
+              src="/assets/Team/pooja.png"
               alt="Pooja Diwakar"
               className="w-full h-96 object-cover rounded-md mb-4"
             />
@@ -134,7 +139,6 @@ const About = () => {
       <div>
         <CountUpSection />
       </div>
-
       {/* Vision and Mission Section */}
       <div className="py-10">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-center gap-8 px-4 lg:px-16">
@@ -181,7 +185,6 @@ const About = () => {
           </div>
         </div>
       </div>
-
       {/* book now section  */}
       <div>
         <div className="bg-[#e8f4f8] p-8 my-8">

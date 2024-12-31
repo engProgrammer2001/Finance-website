@@ -1,20 +1,20 @@
 import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { API_BASE_URL } from "../../../config/config";
+import Loader from "../../Loader/Loader";
 
 const TotalUser = () => {
   const [candidate, setCandidate] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const candidatePerPage = 6;
+  const candidatePerPage = 10;
 
   const token = localStorage.getItem("token");
 
-  // Fetch users from API and filter for employers
   const fetchUsers = useCallback(async () => {
     try {
-      setLoading(true); // Ensure loading state is set before fetching data
+      setLoading(true);
       const response = await axios.get(
         `${API_BASE_URL}user/get-all-user-profile`,
         {
@@ -33,14 +33,12 @@ const TotalUser = () => {
       setError("Failed to fetch data");
       setLoading(false);
     }
-  }, [token]); // Include 'token' as dependency since it's used in the function
+  }, [token]);
 
-  // Fetch users on component mount
   useEffect(() => {
     fetchUsers();
   }, [fetchUsers]);
 
-  // Pagination logic
   const indexOfLastEmployer = currentPage * candidatePerPage;
   const indexOfFirstEmployer = indexOfLastEmployer - candidatePerPage;
   const currentCandidate = candidate.slice(
@@ -58,7 +56,32 @@ const TotalUser = () => {
     if (currentPage > 1) setCurrentPage(currentPage - 1);
   };
 
-  if (loading) return <p>Loading candidates...</p>;
+  const exportData = () => {
+    const csvData = [["Full Name", "Email", "Number", "Role", "Joined"]];
+    candidate.forEach((user) => {
+      csvData.push([
+        user.fullName || "N/A",
+        user.email || "N/A",
+        user.number || "N/A",
+        user.role || "N/A",
+        new Date(user.createdAt).toLocaleDateString() || "N/A",
+      ]);
+    });
+
+    const csvContent = csvData.map((row) => row.join(",")).join("\n");
+
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "candidates.csv";
+    link.click();
+  };
+  if (loading)
+    return (
+      <p>
+        <Loader />
+      </p>
+    );
   if (error) return <p>{error}</p>;
 
   return (
@@ -66,42 +89,56 @@ const TotalUser = () => {
       <h1 className="text-3xl lg:text-5xl font-bold mb-6 text-center text-slate-800">
         Total Users
       </h1>
+      <div className="flex justify-end mb-4">
+        <button
+          onClick={exportData}
+          className="px-4 py-2 border-2 border-slate-800 text-slate-800 font-bold rounded-sm hover:bg-blue-500 hover:text-white transition duration-300"
+        >
+          Export Data
+        </button>
+      </div>
       {candidate.length === 0 ? (
         <p className="text-center text-slate-800">No candidate found.</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {currentCandidate.map((employer, index) => (
-            <div
-              key={index}
-              className="bg-white border border-gray-200 shadow-lg rounded-lg p-6 transition-transform transform hover:-translate-y-2 hover:shadow-xl"
-            >
-              <div className="flex items-center space-x-4">
-                <div className="h-16 w-16 rounded-full bg-slate-600 flex items-center justify-center shadow-inner">
-                  <span className="text-2xl font-bold text-white">
-                    {employer.fullName
-                      ? employer.fullName[0].toUpperCase()
-                      : "E"}
-                  </span>
-                </div>
-                <div>
-                  <h2 className="text-xl font-semibold text-gray-900">
-                    {employer.fullName}
-                  </h2>
-                  <p className="text-gray-500">{employer.email}</p>
-                  <p className="text-gray-500">{employer.number}</p>
-                </div>
-              </div>
-              <div className="mt-6">
-                <p className="text-gray-800">
-                  <span className="font-bold">Role:</span> {employer.role}
-                </p>
-                <p className="text-gray-800">
-                  <span className="font-bold">Joined:</span>{" "}
-                  {new Date(employer.createdAt).toLocaleDateString()}
-                </p>
-              </div>
-            </div>
-          ))}
+        <div className="overflow-x-auto">
+          <table className="table-auto w-full border-collapse border-2 border-slate-800">
+            <thead>
+              <tr>
+                <th className="border-2 border-slate-800 px-4 py-2">S.No.</th>
+                <th className="border-2 border-slate-800 px-4 py-2">
+                  Full Name
+                </th>
+                <th className="border-2 border-slate-800 px-4 py-2">Email</th>
+                <th className="border-2 border-slate-800 px-4 py-2">Number</th>
+                <th className="border-2 border-slate-800 px-4 py-2">Role</th>
+                <th className="border-2 border-slate-800 px-4 py-2">Joined</th>
+              </tr>
+            </thead>
+            <tbody>
+              {currentCandidate.map((user, index) => (
+                <tr key={index}>
+                  <td className="border-2 border-slate-800 px-4 py-2">
+                    {index + 1}
+                  </td>
+                  <td className="border-2 border-slate-800 px-4 py-2">
+                    {user.fullName}
+                  </td>
+                  <td className="border-2 border-slate-800 px-4 py-2">
+                    {user.email}
+                  </td>
+                  <td className="border-2 border-slate-800 px-4 py-2">
+                    {user.number}
+                  </td>
+                  <td className="border-2 border-slate-800 px-4 py-2">
+                    {user.role}
+                  </td>
+                  <td className="border-2 border-slate-800 px-4 py-2">
+                    {new Date(user.createdAt).toLocaleDateString()}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       )}
       <div className="flex justify-between items-center mt-6">

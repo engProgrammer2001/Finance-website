@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { API_BASE_URL } from "../../../config/config";
+import Loader from "../../Loader/Loader";
 
 const LoanData = () => {
   const [loans, setLoans] = useState([]);
@@ -22,33 +23,100 @@ const LoanData = () => {
 
     fetchLoanData();
   }, []);
+
   const handleViewDetails = (loan) => {
     setSelectedLoan(loan);
   };
   const closeModal = () => {
     setSelectedLoan(null);
   };
+
   const handleDelete = async (id) => {
     try {
-      // Send delete request to the API
       await axios.delete(`${API_BASE_URL}loans/delete-loan-data/${id}`);
-
-      // Remove the deleted loan from the state
       setLoans(loans.filter((loan) => loan._id !== id));
-
-      // Close the modal after deleting the loan
       closeModal();
     } catch (err) {
       setError(err.message || "An error occurred while deleting the loan");
     }
   };
 
-  if (loading) return <div>Loading...</div>;
+  const exportData = () => {
+    const headers = [
+      "S.No.",
+      "Full Name",
+      "Email",
+      "Phone",
+      "Loan Amount",
+      "PanNumber",
+      "aadharNumber",
+      "monthlySalary",
+      "Gender",
+      "State",
+      "City",
+      "Employment Status",
+      "Pincode",
+      "Date",
+    ];
+    const rows = loans.map((loan, index) => [
+      index + 1,
+      loan.fullName,
+      loan.email,
+      loan.phone,
+      loan.loanAmount,
+      loan.panNumber,
+      loan.aadharNumber,
+      loan.monthlySalary,
+      loan.gender,
+      loan.state,
+      loan.city,
+      loan.employmentStatus,
+      loan.pincode,
+      loan.date,
+    ]);
+
+    const csvContent = [
+      headers.join(","),
+      ...rows.map((row) => row.join(",")),
+    ].join("\n");
+
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const link = document.createElement("a");
+    const url = URL.createObjectURL(blob);
+
+    link.href = url;
+    link.download = "loan_data.csv";
+    link.style.visibility = "hidden";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  if (loading)
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
+
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="loan-data-container min-h-screen" style={{ padding: "20px" }}>
+    <div
+      className="loan-data-container min-h-screen"
+      style={{ padding: "20px" }}
+    >
       <h1 className="text-3xl font-bold text-center my-8 ">Loan Data</h1>
+
+      <div className="flex justify-end mb-4">
+        <button
+          onClick={exportData}
+          className=" border-2 border-slate-800 px-4 py-2 rounded-sm hover:bg-blue-500 hover:text-white font-bold transition duration-300"
+        >
+          Export Data
+        </button>
+      </div>
+
       {loans.length === 0 ? (
         <p>No loans available.</p>
       ) : (
@@ -82,7 +150,7 @@ const LoanData = () => {
                   <td style={tableCellStyles}>
                     <button
                       onClick={() => handleViewDetails(loan)}
-                      style={buttonStyles}
+                      className=" border border-slate-800 px-4 py-2 rounded-sm hover:bg-blue-500 hover:text-white font-bold transition duration-300"
                     >
                       View More Details
                     </button>
@@ -183,9 +251,9 @@ const tableCellStyles = {
 };
 
 const buttonStyles = {
-  backgroundColor: "#5ae68f",
-  color: "#000",
-  border: "none",
+  color: "#21262B",
+  fontWeight: "bold",
+  border: "2px solid #21262B",
   padding: "8px 12px",
   borderRadius: "4px",
   cursor: "pointer",
@@ -193,7 +261,7 @@ const buttonStyles = {
 };
 
 buttonStyles[":hover"] = {
-  backgroundColor: "#0056b3",
+  backgroundColor: "#2196F3",
 };
 
 export default LoanData;

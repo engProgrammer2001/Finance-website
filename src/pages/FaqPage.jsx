@@ -21,8 +21,8 @@ const FaqPage = () => {
         <div className="bg-[#e8f4f8] p-8 my-8">
           <div className="flex flex-col lg:flex-row justify-between items-center p-4 lg:p-14 gap-4">
             <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-zinc-800 text-2xl lg:text-3xl font-extrabold text-center lg:text-left">
-              Get A Loan Insurance & Credit Card In A Single Click And Fulfil <br /> All Your
-              Requirements
+              Get A Loan Insurance & Credit Card In A Single Click And Fulfil{" "}
+              <br /> All Your Requirements
             </h1>
             <Link
               to={"/sb-finance/apply-loan"}

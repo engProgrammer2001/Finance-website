@@ -14,9 +14,8 @@ const loanOptions = [
     documentsRequired: [
       "Aadhar Card",
       "PAN Card",
-      "Bank Statements",
       "3 - Months Salary Slip",
-      "3 - Bank Statement",
+      "3 - Months Bank Statement",
       "1 - Passphort Size Photo",
     ],
     processingFee: "1% of loan amount",
@@ -83,7 +82,16 @@ const loanOptions = [
     loanAmount: "₹2,00,000 - ₹50,00,000",
     loanTenure: "12 - 60 months",
     eligibility: "Age: 21-65 years, CIBIL score: 700+",
-    documentsRequired: ["Aadhar Card", "PAN Card", "Business Documents"],
+    documentsRequired: [
+      "Aadhar Card",
+      "PAN Card",
+      "1 Photo",
+      "Latest Electricity Bill",
+      "GST Registration",
+      "1 Year Bank Statement",
+      "Ownership Proof (Electricity Bill)",
+      "MSME UDHYAM Certificate",
+    ],
     processingFee: "1% of loan amount",
     repaymentMode: "EMI via bank account",
     prepaymentCharges: "No prepayment charges",
@@ -94,7 +102,6 @@ const loanOptions = [
     ],
     customerSupport: "loanadvisor.roshan@gmail.com",
   },
-
   {
     id: 5,
     title: "Gold Loans",
@@ -179,20 +186,24 @@ const loanOptions = [
     interestRate: "12.0%",
     loanAmount: "₹1,00,000 - ₹50,00,000",
     loanTenure: "12 - 60 months",
-    eligibility: "Business registration: 2+ years, CIBIL score: 700+, Annual turnover: ₹20,00,000+",
-    documentsRequired: ["Business Registration Certificate", "PAN Card", "GST Returns", "Financial Statements"],
+    eligibility:
+      "Business registration: 2+ years, CIBIL score: 700+, Annual turnover: ₹20,00,000+",
+    documentsRequired: [
+      "Business Registration Certificate",
+      "PAN Card",
+      "GST Returns",
+      "Financial Statements",
+    ],
     processingFee: "2% of loan amount",
     repaymentMode: "EMI via bank account",
     prepaymentCharges: "Flexible prepayment options",
     features: [
       "Tailored financial solutions for businesses",
       "Supports working capital and expansion needs",
-      "Competitive interest rates and flexible tenures"
+      "Competitive interest rates and flexible tenures",
     ],
     customerSupport: "corporateloan.support@gmail.com",
-  }
-  
-
+  },
 ];
 
 export default loanOptions;

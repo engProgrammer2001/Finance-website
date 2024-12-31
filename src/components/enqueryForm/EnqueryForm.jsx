@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const ExqueryForm = () => {
-  const [isFormVisible, setIsFormVisible] = useState(true);
+  const [isFormVisible, setIsFormVisible] = useState(false);
   const [result, setResult] = useState("");
 
-  
   // To close the modal when the close button is clicked
   const handleClose = () => {
     setIsFormVisible(false);
@@ -41,6 +40,15 @@ const ExqueryForm = () => {
       setResult("Failed to submit the form. Please try again.");
     }
   };
+
+  // Delay form visibility by 2 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsFormVisible(true);
+    }, 2000);
+
+    return () => clearTimeout(timer); 
+  }, []);
 
   if (!isFormVisible) return null;
 

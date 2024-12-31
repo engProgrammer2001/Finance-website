@@ -135,7 +135,7 @@ const UploadFooterAndFavicon = () => {
                     <td className="p-3 border text-center">{index + 1}</td>
                     <td className="p-3 border text-center">
                       <img
-                        src={`${API_BASE_URL}${logo.image}`} // Assuming 'imagePath' contains the relative path
+                        src={`${API_BASE_URL}${logo.image}`} 
                         alt="Logo"
                         className="w-16 h-16 object-cover mx-auto rounded"
                       />
