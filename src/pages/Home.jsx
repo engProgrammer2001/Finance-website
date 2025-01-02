@@ -34,13 +34,13 @@ const Home = () => {
         <div className="w-full md:w-1/2 p-4 relative flex items-end justify-center">
           {/* Circle Background */}
           <div className="absolute flex items-center justify-center">
-            <div className=" relative top-4 w-[400px] h-[400px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] bg-gradient-to-r from-green-300 to-pink-500  rounded-full opacity-50"></div>
+            <div className=" relative top-4 w-[380px] h-[400px] sm:w-[300px] sm:h-[300px] md:w-[380px] md:h-[400px] bg-gradient-to-r from-green-300 to-pink-500  rounded-full opacity-50"></div>
           </div>
           {/* Image */}
           <img
             src="/assets/Testimonial/t1.png"
             alt="Hero"
-            className="w-[330px] h-[478px] sm:w-[300px] sm:h-[300px] md:w-[300px] md:h-[400px] object-cover relative z-18 rounded-full"
+            className="w-[322px] h-[438px] sm:w-[300px] sm:h-[300px] md:w-[300px] md:h-[400px] object-cover relative z-18 rounded-full"
           />
         </div>
 

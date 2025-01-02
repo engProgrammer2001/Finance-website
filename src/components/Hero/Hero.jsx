@@ -45,7 +45,7 @@ const Hero = () => {
         <img
           src="/assets/hero/img1.png"
           alt="Hero"
-          className="w-[330px] h-[478px] sm:w-[300px] sm:h-[300px] md:w-[600px] md:h-[800px] object-cover rounded-lg relative z-10"
+          className="w-[355px] h-[478px] sm:w-[300px] sm:h-[300px] md:w-[600px] md:h-[800px] object-cover rounded-lg relative z-10"
         />
       </div>
     </div>

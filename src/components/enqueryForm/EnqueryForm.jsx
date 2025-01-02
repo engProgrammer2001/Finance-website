@@ -47,7 +47,7 @@ const ExqueryForm = () => {
       setIsFormVisible(true);
     }, 2000);
 
-    return () => clearTimeout(timer); 
+    return () => clearTimeout(timer);
   }, []);
 
   if (!isFormVisible) return null;
@@ -55,7 +55,7 @@ const ExqueryForm = () => {
   return (
     <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
       {/* Modal container */}
-      <div className="bg-white p-6 rounded-lg shadow-lg w-96 relative">
+      <div className="bg-white p-6 m-4 rounded-lg shadow-lg w-full max-w-md relative">
         {/* Close button positioned relative to the modal container */}
         <button
           onClick={handleClose}
@@ -67,7 +67,7 @@ const ExqueryForm = () => {
           Query Form
         </h2>
         <form onSubmit={onSubmit}>
-          <div className="mb-2">
+          <div className="mb-4">
             <label htmlFor="name" className="block text-gray-700">
               Name<span className="text-red-600">*</span>
             </label>
@@ -80,7 +80,7 @@ const ExqueryForm = () => {
               required
             />
           </div>
-          <div className="mb-2">
+          <div className="mb-4">
             <label htmlFor="email" className="block text-gray-700">
               Email<span className="text-red-600">*</span>
             </label>
@@ -93,7 +93,7 @@ const ExqueryForm = () => {
               required
             />
           </div>
-          <div className="mb-2">
+          <div className="mb-4">
             <label htmlFor="number" className="block text-gray-700">
               Number<span className="text-red-600">*</span>
             </label>
@@ -106,7 +106,7 @@ const ExqueryForm = () => {
               required
             />
           </div>
-          <div className="mb-2">
+          <div className="mb-4">
             <label htmlFor="message" className="block text-gray-700">
               Message
             </label>
@@ -123,7 +123,7 @@ const ExqueryForm = () => {
           >
             Submit
           </button>
-          <span>{result}</span>
+          <span className="block mt-2 text-center text-gray-700">{result}</span>
         </form>
       </div>
     </div>

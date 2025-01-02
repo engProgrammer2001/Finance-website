@@ -108,7 +108,7 @@ const About = () => {
           {/* Team Member 3 */}
           <div className="flex flex-col items-center bg-gray-100 rounded-lg shadow-md p-4">
             <img
-              src="/assets/Team/Chhaya suryavanshi.jpeg"
+              src="/assets/Team/chhaya.png"
               alt="Chhaya Suryavanshi"
               className="w-full h-96 object-cover rounded-md mb-4"
             />

@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import axios from "axios";
 import { API_BASE_URL } from "../../config/config";
+import { FaLock } from "react-icons/fa6";
 
 const Footer = () => {
   const [logoUrl, setLogoUrl] = useState([]);
@@ -212,20 +213,23 @@ const Footer = () => {
                 UDYAM-DL-03-0047404
               </h2>
               <p></p>
+
+              <div className="flex items-center space-x-2 border mt-11 border-gray-300 rounded p-2">
+                <FaLock className="text-blue-500 text-4xl" />
+                <span>SSL Encryption <br /> secure connection</span>
+              </div>
             </div>
           </div>
-          {/* Second Row for Copyright */}
           <div className="mt-8 text-center border-t border-gray-700 pt-4">
             <p className="text-sm">
               &copy; {new Date().getFullYear()} All rights reserved. Developed
-              by{" "}
+              by
               <a
                 href="https://divywebb.com/"
                 className="text-orange-400 font-bold"
               >
                 Divy Webb Creation
-              </a>{" "}
-              and Protected by SSL Certificate
+              </a>
             </p>
           </div>
         </div>
